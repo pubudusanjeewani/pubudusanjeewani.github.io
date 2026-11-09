@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pubudu Sanjeewani — Associate Lecturer, RMIT University</title>
+<meta name="description" content="Personal site of Pubudu Sanjeewani, Associate Lecturer at RMIT University." />
+<meta name="author" content="Pubudu Sanjewani" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<style>
+:root{--bg:#ffffff;--surface:#ffffff;--ink:#15171c;--ink-soft:#3d4250;--muted:#6b7280;--line:#e9edf3;--accent:#b3122a;--accent-soft:#f8ecee;--accent-2:#c98a4b;--shadow:0 1px 2px rgba(15,17,28,0.04),0 8px 24px rgba(15,17,28,0.06);--radius:14px;--maxw:80%}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+
+/* Nav */
+.nav{position:sticky;top:0;z-index:50;background:#ffffff;border-bottom:1px solid var(--line)}
+.nav-inner{max-width:var(--maxw);margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-family:'Fraunces',serif;font-weight:600;font-size:17px;letter-spacing:-0.01em;color:var(--ink)}
+.brand span{color:var(--accent)}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{font-size:13px;color:var(--ink-soft);padding:6px 10px;border-radius:8px;transition:background .15s,color .15s;white-space:nowrap}
+.nav-links a:hover{background:var(--accent-soft);color:var(--accent);text-decoration:none}
+.menu-toggle{display:none;background:none;border:1px solid var(--line);padding:6px 10px;border-radius:8px;cursor:pointer;color:var(--ink);font-family:inherit}
+
+/* Layout */
+main{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+section{padding:64px 0 24px;scroll-margin-top:70px}
+.section-title{font-family:'Fraunces',serif;font-weight:600;font-size:26px;letter-spacing:-0.015em;margin:0 0 24px;color:var(--ink);display:flex;align-items:center;gap:14px}
+.section-title::before{content:"";display:inline-block;width:28px;height:2px;background:var(--accent);border-radius:2px}
+.subhead{font-family:'Fraunces',serif;font-weight:600;font-size:17px;color:var(--ink);margin:28px 0 12px;letter-spacing:-0.01em}
+.subhead:first-of-type{margin-top:4px}
+
+/* Hero */
+.hero{padding-top:56px;display:grid;grid-template-columns:1fr 360px;gap:48px;align-items:center}
+.avatar{width:360px;height:360px;border-radius:50%;background:linear-gradient(135deg,#ecc9ce 0%,#e9c8a3 100%);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:104px;font-weight:600;color:var(--accent);box-shadow:var(--shadow);border:4px solid #fff;overflow:hidden;position:relative}
+.avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-side{order:2;width:360px;display:flex;flex-direction:column;align-items:center;gap:22px}
+.interests{width:100%;text-align:center}
+.interests h2{font-family:'Fraunces',serif;font-weight:600;font-size:16px;letter-spacing:-0.01em;margin:0 0 10px;color:var(--ink)}
+.interest-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.interest-tags span{font-size:13px;color:var(--ink-soft);background:#f3f4f6;border:1px solid var(--line);padding:5px 12px;border-radius:999px;font-weight:500}
+.hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:38px;line-height:1.15;margin:0 0 6px;letter-spacing:-0.02em}
+.hero .role{color:var(--accent);font-weight:500;font-size:16px;margin-bottom:14px}
+.hero .bio-text{color:var(--ink-soft);font-size:15.5px;margin-bottom:14px}
+.contact-row{display:flex;gap:10px;flex-wrap:wrap;font-size:14px;margin-top:14px}
+.contact-row a{display:inline-flex;align-items:center;gap:6px;color:var(--ink-soft);padding:6px 14px;border:1px solid var(--line);border-radius:999px;transition:all .15s}
+.contact-row a:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-soft);text-decoration:none}
+
+/* Timeline */
+.timeline{display:flex;flex-direction:column;gap:22px}
+.entry{display:grid;grid-template-columns:150px 1fr;gap:24px}
+.entry-meta{font-size:13.5px;color:var(--muted);font-weight:500;font-variant-numeric:tabular-nums;padding-top:2px}
+.entry-body h3{margin:0 0 4px;font-size:16.5px;font-weight:600;color:var(--ink)}
+.entry-body .org{color:var(--accent);font-size:14.5px;font-weight:500;margin-bottom:8px}
+.entry-body p{margin:0 0 6px;color:var(--ink-soft);font-size:14.5px}
+.entry-body ul{margin:6px 0 0;padding-left:18px;color:var(--ink-soft);font-size:14.5px}
+.entry-body ul li{margin-bottom:4px}
+.entry-body ul ul{margin-top:4px}
+
+/* Publications */
+.pub-tabs{display:flex;gap:6px;margin-bottom:18px;flex-wrap:wrap}
+.pub-tab{background:transparent;border:1px solid var(--line);padding:6px 14px;border-radius:999px;font-size:13px;color:var(--ink-soft);cursor:pointer;font-family:inherit;transition:all .15s}
+.pub-tab:hover{border-color:var(--accent);color:var(--accent)}
+.pub-tab.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.pub-year{font-family:'Fraunces',serif;font-weight:600;font-size:19px;color:var(--ink);margin:24px 0 8px;letter-spacing:-0.01em}
+.pub-year:first-of-type{margin-top:10px}
+.pub-list{list-style:none;padding:0;margin:0}
+.pub-item{padding:12px 0;border-bottom:1px solid var(--line);font-size:14.5px;color:var(--ink-soft);line-height:1.55}
+.pub-item .title{color:var(--ink);font-weight:600}
+.pub-item .venue{font-style:italic;color:var(--muted)}
+.pub-item .links{margin-left:4px}
+.pub-item .links a{display:inline-block;font-size:12px;padding:1px 7px;margin-left:4px;background:var(--accent-soft);color:var(--accent);border-radius:4px;font-weight:600;letter-spacing:.02em}
+.pub-item .links a:hover{text-decoration:none;background:var(--accent);color:#fff}
+.pub-item b{color:var(--ink);font-weight:600}
+
+/* Project cards */
+.project-grid{display:grid;grid-template-columns:1fr;gap:18px}
+.project-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px 26px;transition:transform .18s,box-shadow .18s,border-color .18s}
+.project-card:hover{box-shadow:var(--shadow);border-color:#d8d4cc}
+.project-card h3{margin:0 0 8px;font-size:17px;font-weight:600;color:var(--ink);font-family:'Fraunces',serif;letter-spacing:-0.01em}
+.project-card .topic{display:inline-block;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);font-weight:600;margin-bottom:10px}
+.project-card p{margin:0 0 8px;color:var(--ink-soft);font-size:14.5px}
+.project-card .links a{display:inline-block;font-size:12.5px;padding:2px 10px;margin-right:6px;margin-top:6px;background:var(--accent-soft);color:var(--accent);border-radius:6px;font-weight:600}
+.project-card .links a:hover{text-decoration:none;background:var(--accent);color:#fff}
+
+/* Plain lists */
+.plain-list{list-style:none;padding:0;margin:0}
+.plain-list>li{padding:12px 0;border-bottom:1px solid var(--line);color:var(--ink-soft);font-size:14.5px}
+.plain-list>li:last-child{border-bottom:none}
+.plain-list .li-title{color:var(--ink);font-weight:600}
+.plain-list .li-meta{color:var(--muted);font-size:13px}
+.plain-list ul{padding-left:20px;margin:6px 0 0}
+.plain-list ul li{margin-bottom:4px}
+.plain-list .links{margin-left:4px}
+.plain-list .links a{display:inline-block;font-size:12px;padding:1px 7px;margin-left:4px;background:var(--accent-soft);color:var(--accent);border-radius:4px;font-weight:600;letter-spacing:.02em}
+.plain-list .links a:hover{text-decoration:none;background:var(--accent);color:#fff}
+
+/* Course coordination history */
+.cc-timeline{border-top:1px solid var(--ink)}
+.cc-year-block{display:grid;grid-template-columns:150px 1fr;gap:24px;padding:22px 0;border-bottom:1px solid var(--line)}
+.cc-year{margin:0;font-size:17px;font-weight:700;color:var(--ink);line-height:1.5}
+.cc-list{list-style:none;margin:0;padding:0}
+.cc-list li{position:relative;display:grid;grid-template-columns:170px 1fr;gap:16px;align-items:baseline;padding:4px 0 4px 18px;font-size:14.5px}
+.cc-list li::before{content:"";position:absolute;left:2px;top:.95em;width:5px;height:5px;border-radius:50%;background:var(--ink)}
+.cc-term{color:var(--muted);font-size:14px}
+.cc-title{color:var(--ink);font-weight:600;font-size:15.5px}
+.cc-role{color:var(--muted);font-size:13.5px;font-weight:400;margin-left:6px}
+.cc-role::before{content:"· ";margin-right:2px}
+.cc-note{display:block;margin-top:2px;color:var(--ink-soft);font-size:13.5px}
+
+/* Awards */
+.awards-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.award-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:flex;gap:14px;align-items:flex-start;transition:transform .18s,box-shadow .18s,border-color .18s}
+.award-card:hover{box-shadow:var(--shadow);border-color:#d8d4cc}
+.award-icon{flex:0 0 auto;width:38px;height:38px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-size:16px}
+.award-card h4{margin:0 0 4px;font-size:15px;font-weight:600;color:var(--ink);line-height:1.3}
+.award-card .award-org{font-size:13px;color:var(--accent);font-weight:500;margin-bottom:6px}
+.award-card p{margin:0;font-size:13.5px;color:var(--ink-soft);line-height:1.5}
+
+/* Footer */
+footer{margin-top:64px;border-top:1px solid var(--line);padding:28px 24px 40px;text-align:center;color:var(--muted);font-size:13.5px}
+footer a{color:var(--muted)}
+.footer-socials{display:flex;justify-content:center;gap:16px;margin-bottom:12px;font-size:18px}
+.footer-socials a{color:var(--ink-soft)}
+.footer-socials a:hover{color:var(--accent)}
+
+/* Responsive */
+@media(max-width:1100px){.hero{grid-template-columns:1fr 280px}.hero-side{width:280px}.avatar{width:280px;height:280px}}
+@media(max-width:760px){
+.hero{grid-template-columns:1fr;text-align:center;gap:20px}
+.hero-side{order:0;width:100%;max-width:360px;margin:0 auto}.avatar{width:260px;height:260px;font-size:72px}
+.hero h1{font-size:30px}
+.contact-row{justify-content:center}
+.entry,.media-item{grid-template-columns:1fr;gap:4px}
+.cc-year-block{grid-template-columns:1fr;gap:8px}
+.cc-list li{grid-template-columns:1fr;gap:0}
+.awards-grid{grid-template-columns:1fr}
+.menu-toggle{display:inline-block}
+.nav-links{display:none;width:100%;flex-direction:column;gap:2px;padding:10px 0}
+.nav-links.open{display:flex}
+.nav-inner{flex-wrap:wrap}
+section{padding:44px 0 16px}
+}
+
+/* Media */
+.media-list{display:flex;flex-direction:column;gap:18px}
+.media-item{display:grid;grid-template-columns:150px 1fr;gap:24px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.media-item:last-child{border-bottom:none;padding-bottom:0}
+.media-meta{font-size:13.5px;color:var(--muted);font-weight:500;padding-top:2px}
+.media-outlet{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);font-weight:700;margin-top:4px}
+.media-body h3{margin:0 0 6px;font-size:16.5px;font-weight:600;color:var(--ink);font-family:'Fraunces',serif;letter-spacing:-0.01em}
+.media-body p{margin:0 0 8px;color:var(--ink-soft);font-size:14.5px}
+.media-body .links a{display:inline-block;font-size:12.5px;padding:2px 10px;margin-right:6px;background:var(--accent-soft);color:var(--accent);border-radius:6px;font-weight:600}
+.media-body .links a:hover{text-decoration:none;background:var(--accent);color:#fff}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="nav-inner"><div class="brand">  <span> </span></div>
+<button class="menu-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">Menu</button>
+<div class="nav-links"><a href="#about">About</a><a href="#education">Education</a><a href="#experience">Experience</a><a href="#publications">Publications</a><a href="#research">Research Projects</a><a href="#teaching">Teaching &amp; Supervision</a><a href="#awards">Awards &amp; Scholarships</a><a href="#activities">Professional Activities</a><a href="#voluntary">Voluntary Work</a></div></div></nav>
+<main>
+<section id="about" class="hero">
+<div class="hero-side">
+<div class="avatar" aria-label="Profile photo"><img src="images/profile.png" alt="Pubudu Sanjeewani" onerror="this.style.display='none'; this.parentNode.innerHTML='<span>PS</span>';" /></div>
+<div class="interests"><h2>Research Interests</h2><div class="interest-tags"><span>Trustworthy &amp; Explainable AI</span><span>AI for Science</span><span>Large Language Models &amp; Generative AI</span><span>Health &amp; Medical AI</span></div></div>
+</div>
+<div><h1>Hello! I'm Pubudu Sanjeewani</h1>
+<div class="role">Associate Lecturer · RMIT University</div>
+<p class="bio-text">I am an Associate Lecturer in Artificial Intelligence at RMIT University, Melbourne. My research interests include deep learning, computer vision, explainable AI, generative AI,  machine learning, and artificial intelligence. I hold a PhD in Artificial Intelligence and Image Processing from Central Queensland University, and I have previously worked as a research fellow, machine learning engineer and software engineer.</p>
+<p class="bio-text">My current research focuses on the medical and health domain, where I develop methods for analysing multimodal medical data, including images (histopathology, CT, MRI), signals (ECG) and text, with a focus on explainable AI, generative AI, and large language and vision-language models. Earlier in my career, I applied these methods to road safety, detecting safety attributes from roadside video, and to workplace safety.</p>
+<div class="contact-row">
+<a href="mailto:pubudu.sanjeewani@rmit.edu.au"><i class="fas fa-envelope"></i> pubudu.sanjeewani@rmit.edu.au</a>
+<a href="https://scholar.google.com.au/citations?user=DTRbN5MAAAAJ&hl=en&citsig=AKwmTV6aSbGqOFBCnvSNuWIpC0Za" target="_blank" rel="noopener"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+<a href="https://www.linkedin.com/in/pubudu-sanjeewani-397162228/?skipRedirect=true" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
+<a href="https://orcid.org/0000-0003-3476-2663" target="_blank" rel="noopener"><i class="fab fa-orcid"></i> ORCID</a>
+<a href="https://www.researchgate.net/profile/Pubudu-Sanjeewani?ev=hdr_xprf" target="_blank" rel="noopener"><i class="fab fa-researchgate"></i> ResearchGate</a>
+<a href="https://github.com/pubudusanjeewani" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+</div></div></section>
+
+<section id="education"><h2 class="section-title">Education</h2><div class="timeline"><div class="entry"><div class="entry-meta">2019 – 2022</div><div class="entry-body"><h3>Ph.D. in Artificial Intelligence and Image Processing</h3><div class="org">Centre for Intelligent Systems (CIS), Central Queensland University – Brisbane Campus, Australia</div><p><strong>Industry partners:</strong> Department of Transport and Main Roads (DTMR), Queensland, and the Australian Road Research Board (ARRB).</p><p><strong>Thesis:</strong> <a href="https://sites.google.com/view/arclp2018-2022/home" target="_blank" rel="noopener">A Deep Learning Technique for the Analysis of Road Safety Attributes</a>.</p><p><strong>Supervisors:</strong> <a href="https://www.brijeshverma.au/" target="_blank" rel="noopener">Prof. Brijesh Verma</a> and <a href="https://staff-profiles.cqu.edu.au/home/view/341" target="_blank" rel="noopener">Dr Mary Tom</a>.</p></div></div><div class="entry"><div class="entry-meta">2011 – 2016</div><div class="entry-body"><h3>Bachelor of the Science of Engineering (Hons) in Electrical and Information Engineering</h3><div class="org">University of Ruhuna, Galle, Sri Lanka (Washington accord accredited)</div></div></div></div></section>
+
+<section id="experience"><h2 class="section-title">Employment History</h2><div class="timeline"><div class="entry"><div class="entry-meta">Jul 2025 – present</div><div class="entry-body"><h3>Associate Lecturer</h3><div class="org">RMIT University – City Campus, Melbourne, Australia</div></div></div><div class="entry"><div class="entry-meta">Jul 2023 – Jun 2025</div><div class="entry-body"><h3>Sessional Academic: Data Science and AI</h3><div class="org">RMIT University, Melbourne, Australia</div></div></div><div class="entry"><div class="entry-meta">Nov 2024 – Dec 2024</div><div class="entry-body"><h3>Postdoctoral Research Assistant</h3><div class="org">RMIT University, Melbourne, Australia</div></div></div><div class="entry"><div class="entry-meta">Aug 2024 – Dec 2024</div><div class="entry-body"><h3>Research Fellow (remote)</h3><div class="org">Griffith University, Brisbane, Australia</div></div></div><div class="entry"><div class="entry-meta">Jul 2023 – Sep 2023</div><div class="entry-body"><h3>Postdoctoral Research Assistant</h3><div class="org">RMIT University, Melbourne, Australia</div></div></div><div class="entry"><div class="entry-meta">Oct 2022 – Sep 2023</div><div class="entry-body"><h3>Machine Learning Engineer</h3><div class="org">Smart AI Connect, Melbourne, Australia</div></div></div><div class="entry"><div class="entry-meta">Jun 2022 – Sep 2022</div><div class="entry-body"><h3>Intern</h3><div class="org">Smart AI Connect, Brisbane, Australia</div></div></div><div class="entry"><div class="entry-meta">Nov 2022 – Apr 2023</div><div class="entry-body"><h3>Consultant</h3><div class="org">KJR, Melbourne, Australia</div></div></div><div class="entry"><div class="entry-meta">Nov 2022 – Feb 2023</div><div class="entry-body"><h3>Consultant</h3><div class="org">Datarwe, Brisbane, Australia</div></div></div><div class="entry"><div class="entry-meta">May 2019 – Oct 2022</div><div class="entry-body"><h3>PhD Researcher</h3><div class="org">Department of Transport and Main Roads (DTMR), Queensland, and Australian Road Research Board (ARRB), Australia</div></div></div><div class="entry"><div class="entry-meta">Sep 2017 – May 2019</div><div class="entry-body"><h3>Software Engineer</h3><div class="org">Sierra Construction Limited, Sri Lanka</div></div></div><div class="entry"><div class="entry-meta">Jun 2017 – Sep 2017</div><div class="entry-body"><h3>Software Engineer</h3><div class="org">Sierra IoT Services (Pvt) Limited, Sri Lanka</div></div></div><div class="entry"><div class="entry-meta">Jun 2016 – May 2017</div><div class="entry-body"><h3>Software Engineer</h3><div class="org">Vogue Tex (Pvt) Ltd, Sri Lanka</div></div></div><div class="entry"><div class="entry-meta">Jan 2016 – Jun 2016</div><div class="entry-body"><h3>Academic Instructor</h3><div class="org">University of Moratuwa, Sri Lanka</div></div></div><div class="entry"><div class="entry-meta">Sep 2015 – Jan 2016</div><div class="entry-body"><h3>Academic Instructor</h3><div class="org">University of Ruhuna, Sri Lanka</div></div></div><div class="entry"><div class="entry-meta">Jan 2015 – Apr 2015</div><div class="entry-body"><h3>Trainee Engineer</h3><div class="org">Ceylon Electricity Board, Sri Lanka</div></div></div><div class="entry"><div class="entry-meta">Dec 2013 – Mar 2014</div><div class="entry-body"><h3>Trainee Engineer</h3><div class="org">Etisalat Lanka (Private) Limited, Sri Lanka</div></div></div></div></section>
+
+<section id="publications">
+<h2 class="section-title">Publications</h2>
+<div class="pub-tabs" role="tablist">
+<button class="pub-tab active" data-filter="all">All</button>
+<button class="pub-tab" data-filter="2026">2026</button>
+<button class="pub-tab" data-filter="2025">2025</button>
+<button class="pub-tab" data-filter="2024">2024</button>
+<button class="pub-tab" data-filter="2021">2021</button>
+<button class="pub-tab" data-filter="2020">2020</button>
+<button class="pub-tab" data-filter="2019">2019</button>
+<button class="pub-tab" data-filter="2016">2016</button>
+</div>
+
+<div class="pub-group" data-year="2026">
+<h3 class="pub-year">2026</h3>
+<ul class="pub-list">
+<li class="pub-item"><b>P. Sanjeewani</b>, B. Verma (2026). <span class="title">A deep learner with small training data for the detection of road safety attributes.</span> <span class="venue">Neural Computing and Applications, vol. 38, no. 665.</span> <span class="links"><a href="https://doi.org/10.1007/s00521-026-12405-4" target="_blank" rel="noopener">DOI</a></span></li>
+<li class="pub-item">M. A. Rahman, <b>P. Sanjeewani</b>, A. Pham, A. Perera, A. Alavi, U. K. Wiil (2026). <span class="title">Understanding student mental health: An explainable pattern analysis approach.</span> <span class="venue">Acta Psychologica.</span> <span class="links"><a href="https://doi.org/10.1016/j.actpsy.2026.107064" target="_blank" rel="noopener">DOI</a></span></li>
+<li class="pub-item">A. Rodrigo, I. Munasinghe, <b>P. Sanjeewani</b>, A. Perera (2026). <span class="title">Benchmarking CNN and transformer-based object detectors for UAV solar panel inspection.</span> <span class="venue">4th IEEE International Conference on Image Processing and Robotics (ICIPRob), Mount Lavinia, Sri Lanka.</span> <span class="links"><a href="https://doi.org/10.1109/ICIPRoB69625.2026.11497799" target="_blank" rel="noopener">DOI</a></span></li>
+<li class="pub-item">B. Azam, <b>P. Sanjeewani</b>, B. Verma, A. Rahman, L. Wang (2026). <span class="title">Unified graph-based framework for visual explainability in convolutional neural networks.</span> <span class="venue">Information Sciences, vol. 723.</span> <span class="links"><a href="https://doi.org/10.1016/j.ins.2025.122648" target="_blank" rel="noopener">DOI</a></span></li>
+</ul>
+</div>
+
+<div class="pub-group" data-year="2025">
+<h3 class="pub-year">2025</h3>
+<ul class="pub-list">
+<li class="pub-item">H. Nimesha, <b>P. Sanjeewani</b>, A. Perera (2025). <span class="title">Deep ensemble model for fine-grained breast tumor classification across multi-magnification samples.</span> <span class="venue">7th IEEE International Conference on Advancements in Computing (ICAC), Kotte, Sri Lanka.</span> <span class="links"><a href="https://doi.org/10.1109/ICAC69156.2025.11361433" target="_blank" rel="noopener">DOI</a></span></li>
+<li class="pub-item">B. Azam, <b>P. Sanjeewani</b>, B. Verma, A. Rahman, L. Wang (2025). <span class="title">A novel graph-based framework for understanding of decision-making process in deep learning models.</span> <span class="venue">IEEE Symposium on Trustworthy, Explainable and Responsible Computational Intelligence (CITREx Companion), Trondheim, Norway, pp. 1–5.</span> <span class="links"><a href="https://doi.org/10.1109/CITRExCompanion65208.2025.10981494" target="_blank" rel="noopener">DOI</a></span></li>
+<li class="pub-item">B. Azam, D. Kuttichira, <b>P. Sanjeewani</b>, B. Verma, A. Rahman, L. Wang (2025). <span class="title">A novel non-iterative training method for CNN classifiers using Gram-Schmidt process.</span> <span class="venue">Neural Processing Letters, vol. 57, p. 27.</span> <span class="links"><a href="https://doi.org/10.1007/s11063-025-11741-1" target="_blank" rel="noopener">DOI</a></span></li>
+</ul>
+</div>
+
+<div class="pub-group" data-year="2024">
+<h3 class="pub-year">2024</h3>
+<ul class="pub-list">
+<li class="pub-item"><b>P. Sanjeewani</b>, G. Neuber, J. Fitzgerald, et al. (2024). <span class="title">Realtime personal protective equipment non-compliance recognition on AI edge cameras.</span> <span class="venue">Electronics, vol. 13, p. 2990 (Special Issue on Pattern Recognition and Image Processing).</span> <span class="links"><a href="https://doi.org/10.3390/electronics13152990" target="_blank" rel="noopener">DOI</a></span></li>
+</ul>
+</div>
+
+<div class="pub-group" data-year="2021">
+<h3 class="pub-year">2021</h3>
+<ul class="pub-list">
+<li class="pub-item"><b>P. Sanjeewani</b>, B. Verma, J. Affum (2021). <span class="title">Multi-stage deep learning technique for improving traffic signs recognition.</span> <span class="venue">36th IEEE International Conference on Image and Vision Computing New Zealand (IVCNZ), Tauranga, New Zealand, pp. 1–6.</span> <span class="links"><a href="https://doi.org/10.1109/IVCNZ54163.2021.9653198" target="_blank" rel="noopener">DOI</a></span></li>
+<li class="pub-item"><b>P. Sanjeewani</b>, B. Verma, J. Affum (2021). <span class="title">Multi-stage deep learning technique with cascaded classifier for improving turn lanes recognition.</span> <span class="venue">IEEE Symposium Series on Computational Intelligence (SSCI), Orlando, Florida, USA, pp. 1–8.</span> <span class="links"><a href="https://doi.org/10.1109/SSCI50451.2021.9659973" target="_blank" rel="noopener">DOI</a></span></li>
+<li class="pub-item"><b>P. Sanjeewani</b>, B. Verma (2021). <span class="title">Optimization of fully convolutional network for road safety attribute detection.</span> <span class="venue">IEEE Access, vol. 9, pp. 120525–120536.</span> <span class="links"><a href="https://doi.org/10.1109/ACCESS.2021.3108543" target="_blank" rel="noopener">DOI</a></span></li>
+<li class="pub-item"><b>P. Sanjeewani</b>, B. Verma (2021). <span class="title">Single class detection-based deep learning approach for identification of road safety attributes.</span> <span class="venue">Neural Computing and Applications, vol. 33, pp. 9691–9702.</span> <span class="links"><a href="https://doi.org/10.1007/s00521-021-05734-z" target="_blank" rel="noopener">DOI</a></span></li>
+<li class="pub-item"><b>P. Sanjeewani</b>, B. Verma, J. Affum (2021). <span class="title">A novel evolving classifier with a false alarm class for speed limit sign recognition.</span> <span class="venue">IEEE Congress on Evolutionary Computation (CEC), Kraków, Poland, pp. 2211–2217.</span> <span class="links"><a href="https://doi.org/10.1109/CEC45853.2021.9504710" target="_blank" rel="noopener">DOI</a></span></li>
+</ul>
+</div>
+
+<div class="pub-group" data-year="2020">
+<h3 class="pub-year">2020</h3>
+<ul class="pub-list">
+<li class="pub-item"><b>P. Sanjeewani</b>, B. Verma (2020). <span class="title">An optimization technique for the detection of safety attributes using roadside video data.</span> <span class="venue">35th IEEE International Conference on Image and Vision Computing New Zealand (IVCNZ), Wellington, New Zealand, pp. 1–6.</span> <span class="links"><a href="https://doi.org/10.1109/IVCNZ51579.2020.9290590" target="_blank" rel="noopener">DOI</a></span></li>
+</ul>
+</div>
+
+<div class="pub-group" data-year="2019">
+<h3 class="pub-year">2019</h3>
+<ul class="pub-list">
+<li class="pub-item"><b>T.G.P. Sanjeewani</b>, B. Verma (2019). <span class="title">Learning and analysis of AusRAP attributes from digital video recording for road safety.</span> <span class="venue">34th IEEE International Conference on Image and Vision Computing New Zealand (IVCNZ), Dunedin, New Zealand, pp. 1–6.</span> <span class="links"><a href="https://doi.org/10.1109/IVCNZ48456.2019.8960997" target="_blank" rel="noopener">DOI</a></span></li>
+</ul>
+</div>
+
+<div class="pub-group" data-year="2016">
+<h3 class="pub-year">2016</h3>
+<ul class="pub-list">
+<li class="pub-item"><b>T.G.P. Sanjeewani</b>, W. M. S. M. M. Wijeyarathne, G. T. S. Dharmasena, M. A. S. T. Ireshika (2016). <span class="title">Designing and simulation of an energy control algorithm for photovoltaic based active generator using state flow analysis.</span> <span class="venue">3rd Annual Research Symposium, Faculty of Engineering, University of Ruhuna, Galle, Sri Lanka.</span> <span class="links"><a href="https://www.researchgate.net/publication/357419495_Designing_and_Simulation_of_an_Energy_Control_Algorithm_for_Photovoltaic_based_Active_Generator_using_State_Flow_Analysis" target="_blank" rel="noopener">Link</a></span></li>
+<li class="pub-item"><b>T.G.P. Sanjeewani</b>, W. M. S. M. M. Wijeyarathne, G. T. S. Dharmasena, M. A. S. T. Ireshika (2016). <span class="title">Microcontroller based energy controller for grid integrated DC source in a PV system.</span> <span class="venue">Present Around The World (PATW), organised by the IET Young Professionals' Section, Galle, Sri Lanka.</span> <span class="links"><a href="https://www.researchgate.net/publication/357419651_Microcontroller_Based_Energy_Controller_for_Grid_Integrated_DC_Source_in_a_PV_System" target="_blank" rel="noopener">Link</a></span></li>
+</ul>
+</div>
+
+<p style="margin-top: 14px; font-size: 14px; color: var(--muted);">For the complete and most current list, please see my <a href="https://scholar.google.com.au/citations?user=DTRbN5MAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar profile</a>.</p>
+</section>
+
+<section id="research"><h2 class="section-title">Research Projects</h2><div class="project-grid"><div class="project-card"><span class="topic">Funded Project · 2024</span><h3>A novel automatic neural network feature extractor with explanations and non-iterative learning</h3><p>Funded by Australian Research Council Discovery Project Grant, the project focused on developing an automatic neural network-based feature extraction framework with fast, non-iterative learning and explainable features. It investigated the feature extraction capabilities of convolutional and traditional neural networks, addressing challenges such as model complexity, training efficiency, and interpretability. The proposed approach aimed to support accurate and explainable feature extraction from both image and non-image data across diverse real-world applications.</p><p>With Griffith University, Australia. Supervisors: Prof. Abdul Sattar and Prof. Brijesh Verma.</p><div class="links"><a href="https://sites.google.com/view/arcdp2021/home" target="_blank" rel="noopener">Project Website</a></div></div><div class="project-card"><span class="topic">Industry Project · 2023</span><h3>Secure multi-platform for identifying and protecting world-heritage Aboriginal UNESCO rock art sites in Far North Queensland</h3><p>Developed an AI-powered digital platform using drone imagery, machine learning, and mapping technologies to identify, document, and preserve thousands of historically significant Aboriginal rock art sites in Far North Queensland. The project involved labelling and analysing drone footage to support the creation of a high-resolution digital archive of cultural heritage sites.</p><p>With KJR, Australia, and partners (Western Yalanji Aboriginal Corporation, Athena AI, Emesent, FlyFreely, MaxusAI, World of Drones Education Pty Ltd and Griffith University), funded by Advance Queensland, Queensland Government, and Trusted Autonomous Systems (TAS). Supervisors: Dr Kelvin Ross and Dr Mark Pedersen.</p><div class="links"><a href="https://kjr.com.au/news/drone-and-ai-to-rediscover-thousands-of-world-heritage-aboriginal-rock-art-sites-in-far-north-queensland/" target="_blank" rel="noopener">Project Website</a></div></div><div class="project-card"><span class="topic">Industry Project · 2022 – 2023</span><h3>Automatic hard hat and safety vest detection, slip/trip/fall detection, and hooning (reckless driving) detection AI projects</h3><p>Developed AI-powered video analytics solutions for real-time safety monitoring using CCTV cameras. The projects focused on detecting PPE non-compliance (hard hats and safety vests), identifying slips, trips and falls, and detecting hooning (reckless driving) through deep learning-based object detection and tracking, enabling automated alerts and incident monitoring.</p><p>With Smart AI Connect, MaxusAI (Australia) and Veracity AI (Sri Lanka). Supervisors: Christopher Lane, Glenn Neuber, John Fitzgerald and Stan Potums.</p></div><div class="project-card"><span class="topic">PhD Project · 2019 – 2022</span><h3>A deep learning technique for the analysis of road safety attributes</h3><p>Funded by the Australian Research Council (ARC) Linkage Projects, this project developed a deep learning-based automated system to analyse road videos, detect and classify road objects, and assess road safety conditions, aiming to improve road infrastructure assessment and reduce road fatalities.</p><p>Industry partners: Department of Transport and Main Roads (DTMR), Queensland, and the Australian Road Research Board (ARRB). Supervisors: Prof. Brijesh Verma and Dr Mary Tom.</p><div class="links"><a href="https://sites.google.com/view/arclp2018-2022/home" target="_blank" rel="noopener">Project Website</a></div></div></section>
+
+<section id="teaching"><h2 class="section-title">Teaching &amp; Supervision</h2><h3 class="subhead">Lecturer, Course Coordinator and Tutor</h3>
+<div class="cc-timeline">
+  <div class="cc-year-block">
+    <h4 class="cc-year">2026</h4>
+    <ul class="cc-list">
+      <li><span class="cc-term">Semester 2</span><span><span class="cc-title">COSC2391 Further Programming (UG)</span><span class="cc-role">114 students</span></span></li>
+      <li><span class="cc-term">Semester 1</span><span><span class="cc-title">COSC2820 Advanced Programming for Data Science (PG)</span><span class="cc-role">237 students, CES 4.14/5, OSI 4.22/5</span><span class="cc-note">Teaching and course overall scores were above all university benchmarks in 2026</span></span></li>
+      <li><span class="cc-term">Semester 1</span><span><span class="cc-title">COSC2815 Advanced Programming for Data Science (UG)</span><span class="cc-role">85 students, CES 4.50/5, OSI 4.24/5</span><span class="cc-note">Teaching overall scores and 4/5 course scores were above university benchmarks in 2026</span></span></li>
+    </ul>
+  </div>
+  <div class="cc-year-block">
+    <h4 class="cc-year">2025</h4>
+    <ul class="cc-list">
+      <li><span class="cc-term">Semester 2</span><span><span class="cc-title">COSC2820 Advanced Programming for Data Science (PG)</span><span class="cc-role">307 students, CES 4.03/5, OSI 4.12/5</span><span class="cc-note">Recognised among the highest OSI courses in the School of Computing Technologies in 2025 by the A/DVC</span></span></li>
+      <li><span class="cc-term">Semester 2</span><span><span class="cc-title">COSC2815 Advanced Programming for Data Science (UG)</span><span class="cc-role">133 students, CES 3.98/5, OSI 3.7/5</span></span></li>
+    </ul>
+  </div>
+</div>
+
+<h3 class="subhead">Tutor and Lab Demonstrator</h3>
+<div class="cc-timeline">
+  <div class="cc-year-block">
+    <h4 class="cc-year">2026</h4>
+    <ul class="cc-list">
+      <li><span class="cc-term">Semester 2</span><span><span class="cc-title">COSC2960 Foundations of AI (UG)</span><span class="cc-role">789 students</span></span></li>
+      <li><span class="cc-term">Semester 1</span><span><span class="cc-title">COSC3144/COSC2527 Games and AI Techniques (PG)</span><span class="cc-role">208 students</span></span></li>
+    </ul>
+  </div>
+  <div class="cc-year-block">
+    <h4 class="cc-year">2025</h4>
+    <ul class="cc-list">
+    <li><span class="cc-term">Semester 2</span><span><span class="cc-title">COSC2960 Foundations of AI (UG)</span><span class="cc-role">640 students, CES 4.5/5</span></span></li>
+      <li><span class="cc-term">Semester 1</span><span><span class="cc-title">COSC2793 Computational Machine Learning (PG)</span><span class="cc-role">147 students</span></span></li>
+      <li><span class="cc-term">Semester 1</span><span><span class="cc-title">COSC2673 Machine Learning (UG)</span><span class="cc-role">289 students</span></span></li>
+    </ul>
+  </div>
+  <div class="cc-year-block">
+    <h4 class="cc-year">2024</h4>
+    <ul class="cc-list">
+      <li><span class="cc-term">Semester 1</span><span><span class="cc-title">COSC2793 Computational Machine Learning (PG)</span><span class="cc-role">99 students, CES 4.19/5</span></span></li>
+      <li><span class="cc-term">Semester 1</span><span><span class="cc-title">COSC2673 Machine Learning (UG)</span><span class="cc-role">142 students</span></span></li>
+      <li><span class="cc-term">Semester 1, 2</span><span><span class="cc-title">COSC2960 Foundations of AI for STEM (UG)</span><span class="cc-role">943 students (semester 1), 1813 students (semester 2)</span></span></li>
+      <li><span class="cc-term">Semester 2</span><span><span class="cc-title">COSC2670/COSC2738 Practical Data Science with Python (PG)</span><span class="cc-role">499 students</span></span></li>
+      <li><span class="cc-term">Semester 2</span><span><span class="cc-title">COSC2531 Programming Fundamentals (PG)</span><span class="cc-role">535 students</span><span class="cc-note">One of the top 5 courses in the School of Computing Technologies</span></span></li>
+    </ul>
+  </div>
+  <div class="cc-year-block">
+    <h4 class="cc-year">2023</h4>
+    <ul class="cc-list">
+      <li><span class="cc-term">Semester 2</span><span><span class="cc-title">COSC2779/COSC2972 Deep Learning (PG)</span><span class="cc-role">60 students</span></span></li>
+    </ul>
+  </div>
+</div>
+
+<h3 class="subhead">Earlier Teaching</h3><ul class="plain-list"><li><span class="li-title">Lab Demonstrator</span> · Jan 2016 – Jun 2016 · University of Moratuwa, Sri Lanka (Department of Electrical Engineering)</li><li><span class="li-title">Lab Demonstrator</span> · Sep 2015 – Jan 2016 · University of Ruhuna, Sri Lanka (Department of Electrical and Information Engineering)</li></ul><h3 class="subhead">Supervision</h3><ul class="plain-list"><li><span class="li-title">Thisara Kumarasiri</span> (Associate Supervisor) · 2026 – present<ul><li>Thesis: Explainable AI in Neurodegenerative Disease Classification</li></ul></li><li><span class="li-title">COSC2667/2777 Data Science &amp; AI Postgraduate Project</span> · 2025 · RMIT University<ul><li>Academic supervisor for 15 industry-partnered capstone projects</li></ul></li></ul></section>
+
+<section id="awards"><h2 class="section-title">Awards &amp; Scholarships</h2><h3 class="subhead">Honors &amp; Awards</h3><div class="awards-grid"><div class="award-card"><div class="award-icon"><i class="fas fa-trophy"></i></div><div><h4>Top Educator recognition</h4><div class="award-org">RMIT University, 2025</div><p>From the Associate Deputy Vice-Chancellor (Semester 2).</p></div></div><div class="award-card"><div class="award-icon"><i class="fas fa-award"></i></div><div><h4>Most Outstanding Paper Award</h4><div class="award-org">IEEE ICAC, 2025</div><p>7th IEEE International Conference on Advancements in Computing, Kotte, Sri Lanka.</p></div></div><div class="award-card"><div class="award-icon"><i class="fas fa-medal"></i></div><div><h4>Presentation Award</h4><div class="award-org">Central Queensland University, 2021</div><p>School of Engineering and Technology (SET) Research Higher Degree Students Symposium.</p></div></div></div><h3 class="subhead">Scholarships</h3><ul class="plain-list"><li><span class="li-title">ARC Linkage Projects Funding Scheme Stipend Scholarship</span> · 2019 · Project <a href="https://dataportal.arc.gov.au/NCGP/Web/Grant/Grant/LP170101255" target="_blank" rel="noopener">LP170101255</a></li><li><span class="li-title">International Excellence Award</span> · 2019 · 100% tuition fee scholarship, Central Queensland University, Australia</li></ul></section>
+
+<section id="activities"><h2 class="section-title">Professional Activities</h2><h3 class="subhead">Journal Reviewer</h3><ul class="plain-list"><li>Computer Vision and Image Understanding (CVIU) · IEEE Access · International Journal of Computational Intelligence and Applications (IJCIA) · Applied Sciences</li></ul><h3 class="subhead">Conference Reviewer</h3><ul class="plain-list"><li><b>2026</b> · 12th International Moratuwa Engineering Research Conference (MERCon), Sri Lanka · 4th International Conference on Image Processing and Robotics (ICIPRob 2026), Mount Lavinia, Sri Lanka</li><li><b>2022</b> · International Joint Conference on Neural Networks (IJCNN) · 2nd International Conference on Electrical, Computer, Communications and Mechatronics Engineering (ICECCME), Maldives</li></ul><h3 class="subhead">Invited Talks</h3><ul class="plain-list"><li><b>2024</b> · "Real-time personal protective equipment non-compliance recognition on AI edge cameras", AIRO Research Seminar, Torrens University, Brisbane <span class="links"><a href="https://github.com/pubudusanjeewani/Invited-Talk-Torrens-University-2024/blob/main/Invited%20Talk%202024%20-%20Presentation.pptx" target="_blank" rel="noopener">Slides</a></span></li><li><b>2023</b> · "AI-based video technology for reshaping the future of Australian healthcare", AI Industry Day, RMIT University City Campus (representing Smart AI Connect, Datarwe and KJR) <span class="links"><a href="https://github.com/pubudusanjeewani/Invited-Talk-RMIT-AI-Industry-Day-2023/blob/main/SmartAIConnect-RMIT-Datarwe-KJR-Presentation.pdf" target="_blank" rel="noopener">Slides</a></span></li><li><b>2016</b> · "Microcontroller based energy controller for grid integrated DC source in a PV system", Present Around The World (PATW), IET Young Professionals' Section, University of Ruhuna <span class="links"><a href="https://github.com/pubudusanjeewani/IET-PATW-2016/blob/main/IET%20PATW%202016%20Presentation.pptx" target="_blank" rel="noopener">Slides</a></span></li></ul><h3 class="subhead">Conference and Symposium Presentations</h3><ul class="plain-list"><li><b>2021</b> · CEC, Kraków, Poland (<a href="https://github.com/pubudusanjeewani/DTMR-Project-2019-2022/blob/main/CEC%202021%20-%20Presentation%20.pptx" target="_blank" rel="noopener">virtual</a>) · SSCI, Orlando, USA (<a href="https://github.com/pubudusanjeewani/DTMR-Project-2019-2022/blob/main/SSCI%202021%20-%20Presentation.pptx" target="_blank" rel="noopener">virtual</a>) · IVCNZ, Tauranga, New Zealand (<a href="https://github.com/pubudusanjeewani/DTMR-Project-2019-2022/blob/main/IVCNZ%202021%20-%20Poster.pdf" target="_blank" rel="noopener">poster</a>) · CQU SET RHD Students Symposium (<a href="https://github.com/pubudusanjeewani/CQUniversity-SET-RHD-Symposiums-2019-2020-2021/blob/main/SET%20RHD%20Symposium%20CQU%20Presentation%202021.pptx" target="_blank" rel="noopener">virtual</a>)</li><li><b>2020</b> · IVCNZ, Wellington, New Zealand (<a href="https://github.com/pubudusanjeewani/DTMR-Project-2019-2022/blob/main/IVCNZ%202020%20-%20Presentation.pptx" target="_blank" rel="noopener">virtual</a>) · CQU SET RHD Students Symposium (<a href="https://github.com/pubudusanjeewani/CQUniversity-SET-RHD-Symposiums-2019-2020-2021/blob/main/SET%20RHD%20Symposium%20CQU%20Presentation%202020.pptx" target="_blank" rel="noopener">oral</a>)</li><li><b>2019</b> · IVCNZ, Dunedin, New Zealand (<a href="https://github.com/pubudusanjeewani/DTMR-Project-2019-2022/blob/main/IVCNZ%202019%20-%20Poster.pptx" target="_blank" rel="noopener">poster</a>) · CQU SET RHD Students Symposium (<a href="https://github.com/pubudusanjeewani/CQUniversity-SET-RHD-Symposiums-2019-2020-2021/blob/main/SET%20RHD%20Symposium%20CQU%20Presentation%202019.pptx" target="_blank" rel="noopener">oral</a>)</li><li><b>2016</b> · 3rd Annual Research Symposium, Faculty of Engineering, University of Ruhuna, Sri Lanka (<a href="https://github.com/pubudusanjeewani/Third-Annual-Research-Symposium-Faculty-of-Eng-Uni-of-Ruhuna-2016" target="_blank" rel="noopener">oral</a>) </li></ul><h3 class="subhead">Memberships</h3><ul class="plain-list"><li><b>2022 – present</b> · Professional Member, Engineers Australia (EA)</li></ul><h3 class="subhead">Organising Committees</h3><ul class="plain-list"><li><b>2026</b> · <a href="https://events.rmit.edu.au/event/iwbf2027/about-iwbf-2027" target="_blank" rel="noopener">15th International Workshop on Biometrics and Forensics (IWBF 2027)</a> organised by RMIT University</li><li><b>2014</b> · International Conference on Advances of Electrical and Information Engineering (ICAEIE) organised by University of Ruhuna, Sri Lanka</li><li><b>2013</b> · Spaghetti Bridge Design Competition, IESL Young Members Section, Techno Conference, Sri Lanka</li></ul></section>
+
+<section id="voluntary">
+    <h2 class="section-title">Voluntary Work</h2>
+    <ul class="plain-list">
+        <li>
+            <span class="li-title">Membership Subcommittee Member</span>
+            <span class="li-meta">The Institution of Engineers, Sri Lanka (IESL), Queensland Chapter | 2022</span>
+        </li>
+    </ul>
+</section>
+
+</main>
+<footer>
+    <div class="footer-socials">
+        <a href="https://www.linkedin.com/in/pubudu-sanjeewani-397162228/?skipRedirect=true" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://scholar.google.com.au/citations?user=DTRbN5MAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar">
+            <i class="fas fa-graduation-cap"></i>
+        </a>
+        <a href="https://github.com/pubudusanjeewani" target="_blank" rel="noopener" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="mailto:pubudu.sanjeewani@rmit.edu.au" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+        </a>
+    </div>
+    © <span id="year"></span> Pubudu Sanjeewani · Associate Lecturer, RMIT University
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Publication year filter
+  const tabs = document.querySelectorAll('.pub-tab');
+  const groups = document.querySelectorAll('.pub-group');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const f = tab.dataset.filter;
+      groups.forEach(g => {
+        g.style.display = (f === 'all' || g.dataset.year === f) ? '' : 'none';
+      });
+    });
+  });
+
+  // Close mobile nav after click
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.remove('open');
+    });
+  });
+</script>
+
+</body>
+</html>
